@@ -7,15 +7,17 @@ from datetime import datetime
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
 
-
     id = db.Column(db.Integer,primary_key = True)
     roles_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
+    first_name = db.Column(db.String(255),nullable=False)
+    other_names = db.Column(db.String(255),nullable = False)
     username = db.Column(db.String(255))
     email = db.Column(db.String(255),unique = True,index = True)
-    bio = db.Column(db.String())
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow)
+    bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     password_hash = db.Column(db.String(255))
-    category = db.relationship('Category', backref='category',lazy='dynamic')
 
     @property
     def password(self):
