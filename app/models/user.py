@@ -9,13 +9,13 @@ class User(UserMixin,db.Model):
 
 
     id = db.Column(db.Integer,primary_key = True)
+    roles_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
     username = db.Column(db.String(255))
     email = db.Column(db.String(255),unique = True,index = True)
-    bio = db.Column(db.String(255))
+    bio = db.Column(db.String())
     profile_pic_path = db.Column(db.String())
     password_hash = db.Column(db.String(255))
-    blog = db.relationship('Blog',backref='user',lazy="dynamic")
-    comment_id = db.relationship('Comment',backref = 'list',lazy="dynamic")
+    category = db.relationship('Category', backref='category',lazy='dynamic')
 
     @property
     def password(self):
