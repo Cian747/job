@@ -1,5 +1,6 @@
-from flask_sqlalchemy import SQLAlchemy
+
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from flask_uploads import UploadSet,configure_uploads,IMAGES
 from config import config_options

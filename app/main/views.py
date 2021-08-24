@@ -5,3 +5,8 @@ from app import db,photos
 from . import main
 from flask_login import login_required,current_user
 import markdown2 
+
+@main.route('/')
+def home():
+    
+    return render_template('index.html')

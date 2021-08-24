@@ -1,0 +1,53 @@
+/*-----------------
+    Register
+ -----------------------*/
+.btn-submit {
+  outline: none;
+  border: none;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  width: 150px;
+  border-radius: 8px;
+  background-color: #0096c7;
+  color: #fff;
+  font-weight: 600;
+}
+.btn-block .btn-submit {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+.btn-block .btn-submit:hover {
+  color: #fff;
+}
+.text-primary {
+  color: #0096c7;
+}
+
+.login-wrapper,
+.signup-wrapper {
+  padding-top: 9em;
+  width: 90%;
+  margin: 0 auto;
+}
+.login-box,
+.signup-box {
+  margin: 0 auto;
+  width: 600px;
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 1em;
+  border-radius: 6px;
+}
+.login-box form,
+.signup-box form,
+.login-box .alert,
+.signup-box .alert {
+  text-align: left;
+}
+.login-box h4,
+.signup-box h4 {
+  font-weight: 900;
+}
+/*==================*/
