@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+
+<!-- Styles block -->
+{% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" />
+{% endblock %} {% block content %}
+<div class="container-fluid landing">
+  <div class="row main">
+    <div class="col-md-6 description">
+      <div class="welcome-text">
+        <h3>Find the most exciting jobs</h3>
+      </div>
+      <div class="search-form"></div>
+    </div>
+    <div class="col-md-4">
+      <img
+        src="{{url_for('static',filename='images/lady.png')}}"
+        style="height: 100%; width: 100%"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="container-fluid categories">
+    <div class="container">
+      <h4>Browse Top categories</h4>
+      <div class="row">
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/sw.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Software development</p>
+            <p class="card-text small">(133)</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/sw.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Software development</p>
+            <p class="card-text small">(133)</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/sw.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Software development</p>
+            <p class="card-text small">(133)</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/sw.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Software development</p>
+            <p class="card-text small">(133)</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/sw.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Software development</p>
+            <p class="card-text small">(133)</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/sw.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Software development</p>
+            <p class="card-text small">(133)</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/sw.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Software development</p>
+            <p class="card-text small">(133)</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/sw.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Software development</p>
+            <p class="card-text small">(133)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="container-fluid how-it-works">
+      <div class="container">
+          <h4>How it works</h4>
+          <div class="row">
+              
+          </div>
+
+      </div>
+  </div>
+
+
+
+
+</div>
+
+{% endblock %}
