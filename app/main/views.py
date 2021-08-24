@@ -7,12 +7,13 @@ from flask_login import login_required,current_user
 import markdown2 
 
 
-main.route('/')
+@main.route('/')
 def home():
     '''
     Direct you to dash-board
     '''
-
     title = 'Jobo-Home'
+    
+    return render_template('index.html', title=title)
 
-    return render_template('index.htm', title=title)
+
