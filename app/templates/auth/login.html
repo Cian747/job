@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block content %}
+    <div class="container-fluid login_container">
+        <div class="login_form">
+            <div class="lform">
+                {{wtf.quick_form(login_form)}}
+            </div>
+            <div class="l_text">
+                <p>
+                    Don't have an account? <a href="{{url_for('auth.register')}}">Sign up here</a></p>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock  %}
