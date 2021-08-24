@@ -1,16 +1,16 @@
 import os
 
+
 class Config:
     '''
     General configuration parent class
     '''
-    MOVIE_API_BASE_URL ='https://api.themoviedb.org/3/movie/{}?api_key={}'
+    MOVIE_API_BASE_URL = 'https://api.themoviedb.org/3/movie/{}?api_key={}'
     MOVIE_API_KEY = os.environ.get('MOVIE_API_KEY')
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
     # Photos path
-    UPLOADED_PHOTOS_DEST ='app/static/photos'
-    
+    UPLOADED_PHOTOS_DEST = 'app/static/photos'
 
     #  email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
@@ -23,8 +23,10 @@ class Config:
     SIMPLEMDE_JS_IIFE = True
     SIMPLEMDE_USE_CDN = True
 
+
 class TestConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://cian:ms254@localhost/watchlist_test'
+
 
 class ProdConfig(Config):
     '''
@@ -46,7 +48,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://cian:ms254@localhost/blogger'
+    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://patrick:Kiman121@localhost/jobapp"
 
     DEBUG = True
 
