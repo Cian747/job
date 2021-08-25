@@ -19,12 +19,15 @@ def login():
         if user is not None and user.verify_password(login_form.password.data):
             print(login_form.password.data)
             login_user(user,login_form.remember.data)
-            return redirect(request.args.get('next') or url_for('auth.two_factor'))
+            return redirect(request.args.get('next') or url_for('main.user_dash'))
 
     flash('Invalid username or Password')
 
-    title = "watchlist login"
-    return render_template('auth/login.html',login_form = login_form,title = title)
+    data = {
+        "title": "JobApp - Login",
+        "login_form":login_form
+    }    
+    return render_template('auth/login.html',login_form = login_form,context = data)
 
 
 @auth.route('/register',methods = ["GET","POST"])
@@ -39,7 +42,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        mail_message("Welcome to watchlist","email/welcome",user.email,user=user)
+        mail_message("Welcome to jobapp","email/welcome",user.email,user=user)
         print(mail_message)
 
         return redirect(url_for('auth.login'))
@@ -54,16 +57,20 @@ def register():
 @auth.route('/login/2fa')
 def two_factor():
     secret = pyotp.random_base32()
-    return render_template('auth/two_factor.html', secret = secret)
+    data = {
+        "title": "JobApp - Login",
+    }    
+    return render_template('auth/two_factor.html', secret = secret, context=data)
 
 @auth.route('/login/2fa', methods = ['POST', 'GET'])
 def two_factor_form():
     secret = request.form.get('secret')
     otp = request.form.get('otp')
+    
 
     if pyotp.TOTP(secret).verify(otp):
         flash("The TOTP 2FA token is valid", "success")
-        return redirect(url_for('main.home'))
+        return redirect(url_for('main.index'))
     else:
         flash("You have supplied an invalid 2FA token!", "danger")
         return redirect(url_for("auth.two_factor"))

@@ -23,8 +23,11 @@ Sidebar
   width: 100%;
   text-align: center;
   text-decoration: none;
-=======
+
+}
+
 /* NAVBAR */
+
 .navbar-nav li a{
   margin-right: 4rem;
   font-family: 'Aclonica', sans-serif;
@@ -52,12 +55,19 @@ Sidebar
 }
 
 
-.card{
+.landing .card{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  box-shadow:  10px 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.landing .card:hover{
+  filter:drop-shadow(8px 8px 10px rgb(19, 19, 19));
+
 }
 
 
@@ -101,3 +111,24 @@ button{
   border-radius: 5px;
 }
 
+
+.job-list .card{
+  box-shadow:  10px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(227, 231, 245, 0.4);
+
+}
+
+.job-list .card a{
+  text-decoration: none !important;
+
+}
+
+.job-list .card:hover{
+  filter:drop-shadow(8px 8px 10px rgb(196, 196, 202));
+
+}
+
+
+.job-description{
+  border-left: 2px solid rgb(190, 180, 180);
+}
