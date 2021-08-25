@@ -1,9 +1,36 @@
+
+/* ----------
+Sidebar
+*/
+
+
+/*-----------------
+    Register
+ -----------------------*/
+.btn-submit {
+  outline: none;
+  border: none;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  width: 150px;
+  border-radius: 8px;
+  background-color: #0096c7;
+  color: #fff;
+  font-weight: 600;
+}
+.btn-block .btn-submit {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+=======
 /* NAVBAR */
 .navbar-nav li a{
   margin-right: 4rem;
   font-family: 'Aclonica', sans-serif;
   color: rgb(19, 14, 39);
   
+
 }
 
 
