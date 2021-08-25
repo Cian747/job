@@ -1,9 +1,7 @@
-/* global bootstrap: false */
-(function () {
-    'use strict'
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    tooltipTriggerList.forEach(function (tooltipTriggerEl) {
-      new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-  })()
-  
+$(document).ready(function() {
+  // SideNav Button Initialization
+  $(".button-collapse").sideNav2();
+  // SideNav Scrollbar Initialization
+  var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+  var ps = new PerfectScrollbar(sideNavScrollbar);
+  });
