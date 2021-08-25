@@ -1,19 +1,20 @@
 .navbar-nav li a{
-
-  font-weight: 500;
-  margin-right: 20px;
+  margin-right: 4rem;
   font-family: 'Aclonica', sans-serif;
+  color: rgb(19, 14, 39);
+  
 }
 
 
 
 .landing{
  height: 100%;
+ text-align: center;
 }
 
 
 .main{
-  height: 35rem;
+  height: 40rem;
   background-color: rgba(186, 197, 243, 0.4);
 }
 .description{
@@ -29,4 +30,38 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+
+.find-post-job{
+  height: 20rem;
+  background-color: rgba(186, 197, 243, 0.4);
+  display: flex;
+  justify-content: center;
+}
+
+
+.find-job, .post-job{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.footer{
+  background-color: rgb(17, 11, 43);
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.about-us, .address{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2;
 }
