@@ -58,10 +58,19 @@ def register():
 @auth.route('/login/2fa')
 def two_factor():
     secret = pyotp.random_base32()
-    return render_template('auth/two_factor.html', secret = secret)
+    data = {
+
+     'title':'Two Factor Authentication',
+    }
+    return render_template('auth/two_factor.html', secret = secret, context = data)
 
 @auth.route('/login/2fa', methods = ['POST', 'GET'])
 def two_factor_form():
+
+    data = {
+     'title':'Two Factor Authentication',
+    }
+    
     secret = request.form.get('secret')
     otp = request.form.get('otp')
 

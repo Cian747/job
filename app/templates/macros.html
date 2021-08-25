@@ -1,0 +1,34 @@
+{% macro showJobs(jobs) %}
+    {% for job in jobs %}
+        <p>
+            {{ job.text }}
+        </p>
+        <p>
+            {{ job.commitment }}
+        </p>
+        <p>
+            {{ job.department }}
+        </p>
+        <p>
+            {{ job.team }}
+        </p>
+        <p>
+            {{ job.location }}
+        </p>
+        <hr>
+    {% endfor %}
+{% endmacro %}
+
+{% macro showJobs2(jobs) %}
+    {% for job in jobs %}
+        {% if job.category['team'] == 'Sales' %}
+            <p>
+                {{ job.text }}
+            </p>
+            <p>
+            {{ job.category['team'] }}
+            </p>
+        {% endif %}
+        <hr>
+    {% endfor %}
+{% endmacro %}

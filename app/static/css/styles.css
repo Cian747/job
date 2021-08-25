@@ -3,7 +3,6 @@
 Sidebar
 */
 
-
 /*-----------------
     Register
  -----------------------*/
@@ -23,8 +22,9 @@ Sidebar
   width: 100%;
   text-align: center;
   text-decoration: none;
-=======
+}
 /* NAVBAR */
+
 .navbar-nav li a{
   margin-right: 4rem;
   font-family: 'Aclonica', sans-serif;
@@ -58,6 +58,13 @@ Sidebar
   justify-content: center;
   align-items: center;
   text-align: center;
+  box-shadow:  10px 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.card:hover{
+  filter:drop-shadow(8px 8px 10px rgb(19, 19, 19));
+
 }
 
 
@@ -100,4 +107,3 @@ button{
   width: 9rem;
   border-radius: 5px;
 }
-

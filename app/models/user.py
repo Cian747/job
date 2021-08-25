@@ -18,6 +18,7 @@ class User(UserMixin,db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow)
     profile_pic_path = db.Column(db.String())
     password_hash = db.Column(db.String(255))
+    my_job_posts = db.relationship('Jobs', backref = 'job', lazy = 'dynamic')
 
     @property
     def password(self):
