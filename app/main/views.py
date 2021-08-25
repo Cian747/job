@@ -19,3 +19,12 @@ def home():
     }
  
     return render_template('landing.html', context=data)
+
+@main.route('/user-dash')
+def user_dash():
+
+    data = {
+        'title': 'user-dash',
+        'user':'current_user' 
+    }
+    return render_template('index.html',context=data)
