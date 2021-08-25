@@ -7,6 +7,8 @@ from ..models.user import User
 from ..models.roles import Role
 from wtforms_sqlalchemy.fields import QuerySelectField
 from wtforms import ValidationError
+from ..models.user import User
+
 
 
 class RegistrationForm(FlaskForm):

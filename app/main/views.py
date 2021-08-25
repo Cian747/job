@@ -19,5 +19,3 @@ def home():
     }
  
     return render_template('landing.html', context=data)
-
-
