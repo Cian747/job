@@ -1,0 +1,55 @@
+<div class="col-md-10 job-listing" id="job-listing">
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="{{ url_for('main.user_dash') }}">Jobs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Applications</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+          <h6>Job listing</h6>
+          {% for job in jobs%}
+          <div class="col-sm-12 job-list mt-3">
+            <a href="{{url_for('main.job_details', id=job.id)}}">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">{{job.job_id}}</h6>
+                  <p class="card-text">{{job.commitment}}</p>
+                  <p class="card-text">{{job.department}}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endfor%}
+        </div>
+        <div class="col-md-8 job-description">
+          <h6>Job Description</h6>
+          <div class="col-sm-12 job-list mt-3">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title">{{single_job.team}}</h6>
+                <p class="card-text">{{single_job.department}}</p>
+                <p class="card-text">{{single_job.location}}</p>
+                <button type="button" class="btn btn-success">Apply</button>
+              </div>
+            </div>
+          </div>
+          <div>
+            {{single_job.text}}
+          </div>
+
+        </div>
+        </div>
+        
+      </div>
+    </div>      
+  </div>

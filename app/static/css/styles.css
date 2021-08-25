@@ -118,7 +118,7 @@ button{
 
 }
 
-.job-list .card a{
+.job-list .card a:link{
   text-decoration: none !important;
 
 }
@@ -131,4 +131,9 @@ button{
 
 .job-description{
   border-left: 2px solid rgb(190, 180, 180);
+}
+
+
+.user-details{
+  /* display: none; */
 }

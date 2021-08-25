@@ -56,4 +56,17 @@ def job_details(id):
     return render_template('index.html',single_job=single_job,jobs=jobs, context=data)
 
 
+@main.route('/user-profile')
+@login_required
+def user_profile():
+
+    data = {
+    'title': 'User profile',
+    'user':current_user 
+
+        
+    }
+
+
+    return render_template('userProfile.html', context=data)
 
