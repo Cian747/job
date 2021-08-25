@@ -22,9 +22,13 @@ def login():
             return redirect(request.args.get('next') or url_for('auth.two_factor'))
 
     flash('Invalid username or Password')
+    data = {
 
+     'title':'Jobo Login',
+     'user':'current_user'  
+    }
     title = "watchlist login"
-    return render_template('auth/login.html',login_form = login_form,title = title)
+    return render_template('auth/login.html',login_form = login_form,title = title, context = data)
 
 
 @auth.route('/register',methods = ["GET","POST"])
