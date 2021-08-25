@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+
+<!-- Styles block -->
+{% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" />
+{% endblock %} {% block content %}
+<div class="container-fluid landing">
+  <div class="row main">
+    <div class="col-md-6 description">
+      <div class="welcome-text">
+        <h3>Find the most exciting jobs</h3>
+      </div>
+      <div class="search-form"></div>
+    </div>
+    <div class="col-md-4">
+      <img
+        src="{{url_for('static',filename='images/lady.png')}}"
+        style="height: 100%; width: 100%"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="container-fluid categories mt-5">
+    <div class="container">
+      <h4>Browse Top categories</h4>
+      <div class="row">
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/cit.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Information Technology</p>
+            <p class="card-text small">(29)</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/media.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Media and Communication</p>
+            <p class="card-text small">(43)</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/medical.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Medical and Health</p>
+            <p class="card-text small">(15)</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/sw.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Software and Web</p>
+            <p class="card-text small">(12)</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/business.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Business and Marketing</p>
+            <p class="card-text small">(33)</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/engineering.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Engineering</p>
+            <p class="card-text small">(10)</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/admin.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Administration</p>
+            <p class="card-text small">(23)</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <div class="icon mt-4">
+            <img
+              src="{{url_for('static',filename='images/education.png')}}"
+              style="height: 5rem; width: 5rem"
+              alt=""
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-text">Teaching and Eduation</p>
+            <p class="card-text small">(56)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row find-post-job">
+    <div class="row">
+      <div class="col-md-6 find-job">
+        <div class="find-job-description">
+          <h5>Looking for a Job?</h5>
+          <p>Find your dream job</p>
+        </div>
+        <div class="find-job-btn">
+          <button class="btn-success">Browse jobs</button>
+        </div>
+      </div>
+      <div class="col-md-6 post-job">
+        <div class="post-job-description">
+          <h5>Looking for a Expert?</h5>
+          <p>Find your skilled employee</p>
+        </div>
+        <div class="post-job-btn">
+          <button class="btn-primary">Post a job</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid top-companies mt-5">
+    <div class="container">
+      <h4>Top companies</h4>
+      <div class="row">
+        <div class="card m-3" style="width: 18rem">
+          <img
+            src="https://www.kassfm.co.ke/home/wp-content/uploads/2019/02/Moringa-School.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text">Moringa School</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <img
+            src="https://c8.alamy.com/zooms/9/3850aab4adad43d8b7123ad5c4af031e/2b66dbh.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text">Cybertek</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <img
+            src="https://pbs.twimg.com/profile_images/1521252568/249634_5724870-113918L_jpg.JPG"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text">Teledata</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width: 18rem">
+          <img
+            src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/faad6175810243.5c77086d737b5.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text">Enigma</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row footer mt-5">
+      <div class="row">
+        <div class=" col-md-6 about-us mt-4">
+          <h5>About Us</h5>
+          <div class="col-md-8 mt-3">
+            <p>Jobo is an exemplary performing career platform, nominated as one of the most promising 
+            start-ups on the continent. We believe that every human being is born with talent, 
+            but lack of opportunities and support makes us fall short of our potential. 
+
+          </p>
+          </div>
+          
+        </div>
+        <div class=" col-md-6 address mt-4">
+          <h5>Address</h5>
+          <p>Jobo</p>
+          <p>morejobo@org.com</p>
+          <p>+25400000890</p>
+          <p>Tecra Road, Kilimani</p>
+        </div>
+      <footer class="mb-4" > Jobo Copyright ©2021 All rights reserved</footer>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

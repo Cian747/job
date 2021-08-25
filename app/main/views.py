@@ -17,6 +17,7 @@ def home():
      'title':'Jobo-Home',
      'user':'current_user'  
     }
-    return render_template('index.html', context = data)
+ 
+    return render_template('landing.html', context=data)
 
 
