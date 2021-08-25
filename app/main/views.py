@@ -12,7 +12,10 @@ def home():
     '''
     Direct you to dash-board
     '''
+    data = {
 
-    title = 'Jobo-Home'
-
-    return render_template('index.html', title=title)
+     'title':'Jobo-Home',
+     'user':'current_user'  
+    }
+ 
+    return render_template('landing.html', context=data)

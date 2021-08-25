@@ -1,0 +1,6 @@
+Hey {{user.first_name}},
+
+Karibu sana to Job App you home of job connections. We are are excited in your registration.
+
+Stay awesome,
+Job App team

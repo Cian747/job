@@ -1,5 +1,6 @@
 import os
 
+
 class Config:
     '''
     General configuration parent class
@@ -8,7 +9,6 @@ class Config:
 
     # Photos path
     UPLOADED_PHOTOS_DEST ='app/static/photos'
-    
     #  email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
@@ -20,8 +20,10 @@ class Config:
     SIMPLEMDE_JS_IIFE = True
     SIMPLEMDE_USE_CDN = True
 
+
 class TestConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://cian:ms254@localhost/watchlist_test'
+
 
 class ProdConfig(Config):
     '''
@@ -43,7 +45,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://cian:ms254@localhost/blogger'
+    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://cian:ms254@localhost/jobapp"
 
     DEBUG = True
 
