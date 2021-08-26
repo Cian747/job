@@ -1,20 +1,20 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,TextAreaField,SubmitField, FileField
-from wtforms.validators import Required
+from wtforms import StringField,TextAreaField,SubmitField,IntegerField,FileField
+from wtforms.validators import Required, InputRequired
 from wtforms import ValidationError
 
+class NewJobForm(FlaskForm):
+    '''
+    Class that creates new job form
+    ''' 
+    # job_id = IntegerField("Job id", validators=[InputRequired()])
+    commitment = StringField("Commitment", validators=[Required()])
+    department = StringField("Department", validators=[Required()])
+    team = StringField("Team", validators=[Required()])
+    location = StringField("Location", validators=[Required()])
+    descriptionPlain = TextAreaField("Description", validators=[Required()])
 
-# class BlogForm(FlaskForm):
-
-#  title = StringField('Blog title',validators=[Required()])
-
-#  author = StringField('Name',validators=[Required()])
-
-#  review = TextAreaField('Write blog here: ')
-
-#  submit = SubmitField('Submit')
-
-
+    submit = SubmitField('Add job')
 
 class UpdateProfile(FlaskForm):
     profile_pic_path= FileField('Update your profile pic')
@@ -23,4 +23,4 @@ class UpdateProfile(FlaskForm):
 
 class UpdateBio(FlaskForm):
     bio = TextAreaField('Bio',validators = [Required()])
-    # submit = SubmitField('Submit')
+    # submit = SubmitField('Submit'

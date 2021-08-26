@@ -22,11 +22,12 @@ def login():
             return redirect(request.args.get('next') or url_for('main.user_dash'))
 
     flash('Invalid username or Password')
-
     data = {
+
         "title": "JobApp - Login",
         "login_form":login_form
-    }    
+    }   
+
     return render_template('auth/login.html',login_form = login_form,context = data)
 
 
@@ -56,6 +57,7 @@ def register():
 
 @auth.route('/login/2fa')
 def two_factor():
+    
     secret = pyotp.random_base32()
     data = {
         "title": "JobApp - Login",
@@ -64,13 +66,18 @@ def two_factor():
 
 @auth.route('/login/2fa', methods = ['POST', 'GET'])
 def two_factor_form():
+
+    data = {
+     'title':'Two Factor Authentication',
+    }
+    
     secret = request.form.get('secret')
     otp = request.form.get('otp')
     
 
     if pyotp.TOTP(secret).verify(otp):
         flash("The TOTP 2FA token is valid", "success")
-        return redirect(url_for('main.index'))
+        return redirect(url_for('main.user_dash'))
     else:
         flash("You have supplied an invalid 2FA token!", "danger")
         return redirect(url_for("auth.two_factor"))

@@ -3,17 +3,28 @@
 <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" />
 <script src="{{ url_for('static',filename='js/script.js') }}"></script>
 {% endblock %} {% block content %}
+<<<<<<< HEAD
 
 <div class="container-fluid">
   <div class="row min-vh-100 flex-column flex-md-row">
     <!-- sidebar block -->
     {% block sidebar%} {%include 'sidebar.html'%} {% endblock%} {% if
     current_user.roles_id == 1 %}
+=======
+<div class="container-fluid">
+  <div class="row min-vh-100 flex-column flex-md-row">
+    <!-- sidebar block -->
+    {% block sidebar%} 
+    {%include 'sidebar.html'%} 
+    {% endblock%} 
+    {% if current_user.roles_id == 1 %}
+>>>>>>> 9555e5aa7c2986e4c3fca67f14b56515541193a9
     <div class="col-md-10 user-details">
       <div class="container">
         <h6>Main Information</h6>
         <div class="col-md-10">
           <h5>{{current_user.first_name}} {{current_user.other_names}}</h5>
+<<<<<<< HEAD
 
           <h6>Bio</h6>
 
@@ -24,6 +35,14 @@
           <p>{{current_user.username| capitalize}} has no bio</p>
           {% endif %}
 
+=======
+          <h6>Bio</h6>
+          {% if current_user.bio %}
+          <p>{{current_user.bio}}</p>
+          {%else%}
+          <p>{{current_user.username| capitalize}} has no bio</p>
+          {% endif %}
+>>>>>>> 9555e5aa7c2986e4c3fca67f14b56515541193a9
           <button
             type="button"
             class="btn btn-primary m-3"
@@ -32,6 +51,7 @@
           >
             Edit Bio
           </button>
+<<<<<<< HEAD
         </div>
         <!-- Modal -->
         <div
@@ -83,10 +103,63 @@
             </div>
           </div>
         </div>
+=======
+        </div>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Update your Bio
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form action="" method="post">
+                  {{form.hidden_tag()}}
+                  <div>
+                    <div class="fw-bold text-capitalize mb-2">
+                      {{ form.bio.label }}
+                    </div>
+                    <div>
+                      {{form.bio(rows=10,cols=20, class_="form-control"
+                      )}}
+                    </div>
+                  </div>
+                  <div class="mt-2">
+                    <a href="{{url_for('main.user_profile')}}"><button type="submit" class="btn btn-primary m-3">
+                      Update
+                    </button></a
+                  >
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+              </div>
+            </div>
+          </div>
+        </div>
+>>>>>>> 9555e5aa7c2986e4c3fca67f14b56515541193a9
       </div>
     </div>
     {% endif %}
   </div>
 </div>
+<<<<<<< HEAD
 
 {% endblock %}
+=======
+{% endblock %}
+>>>>>>> 9555e5aa7c2986e4c3fca67f14b56515541193a9
