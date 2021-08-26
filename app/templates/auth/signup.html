@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% block title %}
+  {% set title = context['title'] %}
+  {{ title }}
+{% endblock title %}
+
 {% block content %}
 <div class="signup-wrapper">
   <div class="signup-box">

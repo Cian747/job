@@ -1,8 +1,8 @@
-from flask import render_template, request, redirect, url_for, abort
+from app.models.job import Jobs
+from flask import render_template,request,redirect,url_for,abort
 # from app.models.user import User
 # from app.models.subscribe import Subscribe
 from app import db, photos
-from ..models.job import Jobs
 from . import main
 from flask_login import login_required, current_user
 import markdown2
@@ -23,17 +23,12 @@ def home():
     return render_template('landing.html', context=data)
 
 
-@main.route('/user-dash', methods=['GET', 'POST'])
+@main.route('/user-dash')
+@login_required
 def user_dash():
     form = NewJobForm()
     job_listings = Jobs.get_joblistings(current_user.get_id())
-
-    data = {
-        'title': 'user-dash',
-        'user': current_user,
-        'new_job_form': form,
-        'job_listings':job_listings
-    }
+   
     
     if form.validate_on_submit():
         new_job = Jobs(commitment=form.commitment.data, department=form.department.data, team=form.team.data,
@@ -44,23 +39,48 @@ def user_dash():
         
         return redirect(url_for('.user_dash'))
 
-    return render_template('index.html', context=data)
+    jobs = Jobs.query.all()
+    single_job = Jobs.query.filter_by(id=1).first()
+    
+    data = {
+        'title': 'user-dash',
+        'user': current_user,
+        'new_job_form': form,
+        'job_listings':job_listings
+    }
 
 
-@main.route('/employer/add-job', methods=['GET', 'POST'])
+    return render_template('index.html',context=data, jobs=jobs, single_job=single_job)
+
+
+@main.route('/Job/job-details/<int:id>')
 @login_required
-def new_job():
-    '''
-    View function that handles add new job request
-    '''
+def job_details(id):
+    single_job=Jobs.query.get(id)
+    jobs = Jobs.query.all()
 
-    form = NewJobForm()
+   
+    data = {
+    'title': 'Job details',
+    'user':current_user 
 
-    if form.validate_on_submit():
-        new_job = Jobs(job_id=form.job_id.data, commitment=form.commitment.data, department=form.department.data, team=form.team.data,
-                       location=form.location.data, descriptionPlain=form.descriptionPlain.data, posted_by=current_user.get_id())
+        
+    }
 
-        db.session.add(new_job)
-        db.session.commit()
+    return render_template('index.html',single_job=single_job,jobs=jobs, context=data)
 
-    return redirect(url_for('.user_dash'))
+
+@main.route('/user-profile')
+@login_required
+def user_profile():
+
+    data = {
+    'title': 'User profile',
+    'user':current_user 
+
+        
+    }
+
+
+    return render_template('userProfile.html', context=data)
+

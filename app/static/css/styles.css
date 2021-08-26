@@ -120,12 +120,18 @@ button {
   align-items: center;
 }
 
-.card {
+.landing .card{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  box-shadow:  10px 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.landing .card:hover{
+  filter:drop-shadow(8px 8px 10px rgb(19, 19, 19));
   box-shadow: 10px 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -172,25 +178,29 @@ button {
   border-radius: 5px;
 }
 
+.job-list .card{
+  box-shadow:  10px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(227, 231, 245, 0.4);
 
-/* sidebar */
-/* .sidebar{
-  background-color: #34444c;
-    border-right: 1px solid transparent;
-    bottom: 0;
-    left: 0;
-    margin-top: 0;
-    position: fixed;
-    top: 60px;
-    transition: all 0.2s ease-in-out 0s;
-    width: 230px;
-    z-index: 1001;
 }
 
-.page-wrapper {
-  left: 0;
-  margin-left: 230px;
-  padding-top: 60px;
-  position: relative;
-  transition: all 0.2s ease-in-out;
-} */
+.job-list .card a:link{
+  text-decoration: none !important;
+
+}
+
+.job-list .card:hover{
+  filter:drop-shadow(8px 8px 10px rgb(196, 196, 202));
+
+}
+
+
+.job-description{
+  border-left: 2px solid rgb(190, 180, 180);
+}
+
+
+.user-details{
+  /* display: none; */
+}
+
