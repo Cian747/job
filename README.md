@@ -34,6 +34,9 @@ None
 * Bootstrap
 * Jquery
 
+## Live link
+    https://joboapp.herokuapp.com/
+
 ## Support and contact details
 cian.omondi@student.moringaschool.com, franklin.mutua@student.moringaschool.com,
 patrick.kimanthi@student.moringaschool.com, nicholas.omondi@student.moringaschool.com
