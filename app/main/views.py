@@ -6,8 +6,8 @@ from app import db,photos
 from . import main
 from flask_login import login_required,current_user
 import markdown2 
-from app.request import general_two
-from ..request import job_listings
+from app.request import general
+# from ..request import job_listings
 from .forms import NewJobForm,UpdateBio
 from sqlalchemy import func,desc,asc
 
@@ -21,24 +21,33 @@ def home():
 
     # spec_cat = Jobs.query.filter_by(department = department).all()
 
-    # department_count = {}
-    # records = Jobs.query.all()
-    # for department in Jobs.query.distinct(Jobs.department):
-    #     count = 0
-    #     for record in records:
-    #         if record.department == department.department:
-    #             count +=1
-    #     department_count[print(department.department)] = count        
-    #     # print(department)
+    department_count = {}
+    records = Jobs.query.all()
+    for department in Jobs.query.distinct(Jobs.department):
+        count = 0
+        for record in records:
+            if record.department == department.department:
+                count +=1
+        # department_count[print(department.department)] = count        
+        print(department.department)
     #     # print(count)
     # #     department_count.append({department.department:count})
     # print(department_count.Technology)
     # for count in department_count:
     #     print(count.Technology)
 
+    # finance = Jobs.query.filter_by(department = 'Finance').all()
+    jobs = Jobs.query.all()
+
+    departments = []
+    for job in jobs:
+        departments.append(job.department)
+
+
     data = {
         'title': 'Jobo-Home',
-        'user': current_user
+        'user': current_user,
+        'departments': departments
     }
 
     return render_template('landing.html', context=data)
@@ -177,6 +186,8 @@ def jobs(id):
 
     else:
         one_job = Jobs.query.filter_by(id = id).first()
+
+    # jobs = general()
 
     jobs = Jobs.query.all()
 
