@@ -1,6 +1,6 @@
 <div class="col-md-10 job-listing" id="job-listing">
   <div class="card">
-    <div class="card-header">
+    <div class="card-header " style="width: 100%;">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
           <a class="nav-link active" href="{{ url_for('main.user_dash') }}">Jobs</a>
@@ -13,22 +13,21 @@
         </li>
       </ul>
     </div>
-    <div class="card-body">
+    <div class="card-body" style="width: 100%;">
       <div class="row">
         <div class="col-md-4">
           <h6>Job listing</h6>
-          <div id="" style="overflow-y: scroll; height: 800px">
+          <div id="" style="overflow-y: scroll; height: 800px; width: 100%;">
             {% for job in jobs%}
-            <div class="col-sm-12 job-list mt-3">
-              <a href="{{url_for('main.job_details', id=job.id)}}">
-                <div class="card">
+            <div class="col-md-12 job-list mt-3">
+                <div class="card col-md-11">
                   <div class="card-body">
                     <h6 class="card-title">{{job.text}}</h6>
                     <p class="card-text">{{job.commitment}}</p>
                     <p class="card-text">{{job.department}}</p>
+                    <a href="{{url_for('main.job_details', id=job.id)}}">More details</a>
                   </div>
                 </div>
-              </a>
 
             </div>
             {% endfor%}
@@ -42,13 +41,18 @@
                 <h6 class="card-title">{{single_job.team}}</h6>
                 <p class="card-text">{{single_job.department}}</p>
                 <p class="card-text">{{single_job.location}}</p>
-                <button type="button" class="btn btn-success">Apply</button>
+                <a href="{{ single_job.applyUrl }}"><button class="btn btn-success">Apply direct</button></a>
               </div>
             </div>
           </div>
-          <div>
-            {{single_job.text}}
+          <div class="col-sm-12 job-list mt-3">
+             <p>{{single_job.text}}</p>
             <p>{{ single_job.descriptionPlain }}</p>
+            
+          </div>
+          <div>
+            
+           
           </div>
 
         </div>

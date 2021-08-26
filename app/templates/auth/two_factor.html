@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
+<!-- Styles block -->
+
+{% block styles%} 
+  {{ super() }}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+{% endblock %} 
+
 {% block content %}
-<div class="container">
+<div class="container two-factor">
   <div class="row justify-content-center">
     <div class="col-lg-12">
       <div class="jumbotron text-center p-4">

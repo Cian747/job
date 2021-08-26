@@ -26,7 +26,6 @@ def general():
         if get_job_response:
             for job in get_job_response:
                 job_id  = job.get('id')
-                job_id = job.get("job_id")
                 commitment = job.get('categories').get('commitment')
                 department = job.get('categories').get('department')
                 team = job.get('categories').get('team')
