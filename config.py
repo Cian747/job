@@ -6,7 +6,7 @@ class Config:
     General configuration parent class
     '''
     SECRET_KEY = os.environ.get('SECRET_KEY')
-
+    JOB_API_URL =os.environ.get('JOB_API_URL')
     # Photos path
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     #  email configurations
