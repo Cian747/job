@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,TextAreaField,SubmitField,IntegerField
+from wtforms import StringField,TextAreaField,SubmitField,IntegerField,FileField
 from wtforms.validators import Required, InputRequired
 from wtforms import ValidationError
 
@@ -16,18 +16,11 @@ class NewJobForm(FlaskForm):
 
     submit = SubmitField('Add job')
 
-# class BlogForm(FlaskForm):
-
-#  title = StringField('Blog title',validators=[Required()])
-
-#  author = StringField('Name',validators=[Required()])
-
-#  review = TextAreaField('Write blog here: ')
-
-#  submit = SubmitField('Submit')
+class UpdateProfile(FlaskForm):
+    profile_pic_path= FileField('Update your profile pic')
+    submit = SubmitField('Submit')
 
 
-
-# class UpdateProfile(FlaskForm):
-#     bio = TextAreaField('Tell us about you.',validators = [Required()])
-#     submit = SubmitField('Submit')
+class UpdateBio(FlaskForm):
+    bio = TextAreaField('Bio',validators = [Required()])
+    # submit = SubmitField('Submit'

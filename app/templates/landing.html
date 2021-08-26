@@ -1,13 +1,4 @@
 {% extends 'base.html' %}
-{% block title %}
-  {% set title = context['title'] %}
-  {{ title }}
-{% endblock title %}
-
-{% block title %}
-  {% set title = context['title'] %}
-  {{ title }}
-{% endblock title %}
 
 {% block title %}
   {% set title = context['title'] %}
@@ -83,8 +74,8 @@
             />
           </div>
           <div class="card-body">
-            <p class="card-text"> <a href="{{ url_for('main.department', department = 'Sales') }}">Medical and Health</a></p>
-            <p class="card-text small">(15)</p>
+            <p class="card-text"><a href="{{ url_for('main.department', department = 'Sales') }}">Medical and Health</a></p>
+            <p class="card-text small"></p>
           </div>
         </div>
         <div class="card m-3" style="width: 18rem">
