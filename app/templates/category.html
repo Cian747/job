@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" />
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid category ">
+    <div class="container">
+        <div class="welcome">
+            <h2>{{job_cat.department | capitalize}}</h2>
+            <p>Find the ideal job for you</p>
+            <p>Jobs found: {{ job_cat | count() }}</p>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-5">
+                <div id="" style="overflow-y: scroll; height: 800px">
+
+                    {{ macro.categoriesFound(job_cat) }}
+
+                </div>
+            </div>
+
+            <div class="col-md-7 cat-det">
+                <h1><cite>{{ one_job.title }}</cite></h1>
+                <h4>{{ one_job.commitment }}</h4>
+                <p class="fs-5">{{ one_job.department }}</p>
+                <p>{{ one_job.descriptionPlain }}</p>
+                <p>{{ one_job.team }}</p>
+                <a href="{{ one_job.applyUrl }}"><button class="btn btn-danger">Apply direct</button></a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

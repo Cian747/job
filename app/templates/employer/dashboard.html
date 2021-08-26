@@ -1,0 +1,54 @@
+{% set job_listings = context['job_listings'] %}
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <div
+    class="
+      d-flex
+      justify-content-between
+      flex-wrap flex-md-nowrap
+      align-items-center
+      pt-3
+      pb-2
+      mb-3
+      border-bottom
+    "
+  >
+    <h1 class="h2">Dashboard/job listing</h1>
+  </div>
+  <!-- create a job post -->
+  <div class="div">
+      {%if job_listings|length < 0 %}
+      <p>There are no jobs to display</p>
+      {%else%}
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Commitment</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Team</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">View</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {%for joblisting in job_listings%}
+                        <tr class="job-detail">
+                            <td>{{ loop.index }}</td>
+                            <td class="commitment">{{joblisting.commitment}}</td>
+                            <td class="department">{{joblisting.department}}</td>
+                            <td class="team">{{joblisting.team}}</td>
+                            <td class="location">{{joblisting.location}}</td>
+                            <td style="display: none;" class="description">{{joblisting.descriptionPlain}}</td>
+                            <td><a data-jobid="{{joblisting.id}}" class="view-job-details" href="#">View</a></td>
+                        </tr>
+                        {%endfor%}
+                </tbody>
+            </table>
+            </div>
+        </div>
+    {%endif%}
+  <!-- add job form -->
+  
+</main>

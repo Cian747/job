@@ -1,8 +1,20 @@
 {% extends "base.html" %}
+{% block title %}
+  {% set title = context['title'] %}
+  {{ title }}
+{% endblock title %}
+
+<!-- Styles block -->
+
+{% block styles%} 
+  {{ super() }}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+{% endblock %} 
+
 {% block content %}
-<div class="signup-wrapper">
-  <div class="signup-box">
-    <h4>Job<span class="text-primary">App</span></h4>
+<div class="container signup-wrapper">
+  <div class="signup-box col-md-3">
+    <h4>Jobo<span class="text-primary">App</span></h4>
     <p class="login-box-msg">Fill in the form to create an account</p>
     {% for message in get_flashed_messages() %}
       <div class="alert alert-danger">
@@ -45,7 +57,7 @@
         class_="form-control")}}
       </div>
       <a href="{{url_for('auth.login')}}">Already have an account</a>
-      <div class="div">{{registration_form.submit(class_="btn-submit")}}</div>
+      <div class="register mt-3">{{registration_form.submit(class_="btn-submit btn-primary")}}</div>
     </form>
   </div>
 </div>

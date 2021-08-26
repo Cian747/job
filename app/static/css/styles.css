@@ -1,58 +1,40 @@
 
-/* ----------
-Sidebar
-*/
-
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 /*-----------------
     Register
  -----------------------*/
-.btn-submit {
-  outline: none;
-  border: none;
-  margin: 1rem 0;
-  padding: 0.5rem 1rem;
-  width: 150px;
-  border-radius: 8px;
-  background-color: #0096c7;
-  color: #fff;
-  font-weight: 600;
+
+.job-seeker-dash-wrapper{
+  border: 2px solid red;
 }
-.btn-block .btn-submit {
-  display: block;
-  width: 100%;
-  text-align: center;
-  text-decoration: none;
-=======
+
 /* NAVBAR */
-.navbar-nav li a{
+.navbar-nav li a {
   margin-right: 4rem;
-  font-family: 'Aclonica', sans-serif;
+  font-family: "Aclonica", sans-serif;
   color: rgb(19, 14, 39);
-  
-
 }
 
-
-
-.landing{
- height: 100%;
- text-align: center;
+.landing {
+  height: 100%;
+  text-align: center;
 }
 
-
-.main{
+.main {
   height: 40rem;
   background-color: rgba(198, 203, 224, 0.4);
 }
-.description{
+.description {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
-.card{
+.card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,24 +42,22 @@ Sidebar
   text-align: center;
 }
 
-
-.find-post-job{
+.find-post-job {
   height: 20rem;
   background-color: rgba(198, 203, 224, 0.4);
   display: flex;
   justify-content: center;
 }
 
-
-.find-job, .post-job{
+.find-job,
+.post-job {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-
-.footer{
+.footer {
   background-color: rgb(17, 11, 43);
   color: white;
   display: flex;
@@ -85,8 +65,8 @@ Sidebar
   text-align: center;
 }
 
-
-.about-us, .address{
+.about-us,
+.address {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,10 +74,264 @@ Sidebar
   line-height: 2;
 }
 
-button{
+button {
   height: 40px;
   border: none;
   width: 9rem;
   border-radius: 5px;
 }
 
+/* NAVBAR */
+
+.navbar-nav li a {
+  margin-right: 4rem;
+  font-family: 'Acme', sans-serif;
+  color: rgb(18, 44, 194) !important;
+}
+
+.navbar-nav li a:hover{
+  color: black !important;
+}
+
+.navbar-brand{
+  font-family: 'Acme', sans-serif;
+  color: rgb(50, 5, 228) !important;
+  font-size: 23px;
+
+}
+
+.sidebar .navbar-nav li a {
+  color: white !important;
+  text-align: center;
+}
+
+
+.sidebar .navbar-brand{
+  color: white !important;
+  text-align: center;
+  margin-left: 2rem !important;
+}
+
+.landing {
+  height: 100%;
+  text-align: center;
+}
+
+.main {
+  height: 40rem;
+  background-color: rgba(198, 203, 224, 0.4);
+}
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Acme', sans-serif;
+}
+
+.landing .card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow:  10px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card:hover{
+  filter:drop-shadow(8px 8px 10px rgb(19, 19, 19));
+}
+
+.landing .card:hover{
+  filter:drop-shadow(8px 8px 10px rgb(19, 19, 19));
+  box-shadow: 10px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/* .card:hover {
+  filter: drop-shadow(8px 8px 10px rgb(19, 19, 19));
+} */
+
+.find-post-job {
+  height: 20rem;
+  background-color: rgba(198, 203, 224, 0.4);
+  display: flex;
+  justify-content: center;
+}
+
+.find-job,
+.post-job {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  background-color: rgb(17, 11, 43);
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-us,
+.address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2;
+}
+
+button {
+  height: 40px;
+  border: none;
+  width: 9rem;
+  border-radius: 5px;
+}
+
+/* ----------
+ General Settings
+*/
+
+.generalPage .welcome{
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(129, 136, 165, 0.4);
+  box-shadow:  4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.generalPage .card{
+    /* border:1px solid grey; */
+  box-shadow:  0 4px 8px 0 rgba(51, 51, 51, 0.2);
+  margin: 1rem;
+  color: black;
+  border-radius: 8px;
+  text-align: left !important; 
+  cursor: pointer;
+
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+
+
+.generalPage .card .card-header{
+  background-color: rgba(227, 231, 245, 0.4);
+  color: rgb(14, 2, 22);
+  text-align: center;
+
+}
+
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card-title{
+
+  font-family: 'Acme', sans-serif;
+  font-size: 20px;
+}
+
+.category{
+
+  background-color: #E5DCC5;
+
+}
+.cat-det{
+
+  background-color: white;
+  border-radius: 20px;
+  box-shadow:  4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+  padding: auto;
+
+}
+
+
+/* JOB LISTING */
+
+.job-listing{
+  text-align: left;
+}
+.job-list .card{
+  box-shadow:  10px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(227, 231, 245, 0.4);
+
+}
+
+.job-list .card a:link{
+  text-decoration: none !important;
+
+}
+
+.job-list .card:hover{
+  filter:drop-shadow(8px 8px 10px rgb(196, 196, 202));
+
+}
+
+
+/* LOGIN */
+.login_container{
+
+  height: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(227, 231, 245, 0.4);
+
+}
+
+.login_container .btn{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: rgb(15, 72, 230) !important;
+  color: white;
+  font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+/* SIGNUP */
+
+.signup-wrapper{
+  height: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background-color: rgba(227, 231, 245, 0.4);
+}
+
+
+.signup-wrapper .btn-primary{
+    color: white;
+    height: 40px;
+    width: 6rem;
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+  
+}
+
+.signup-wrapper h4, .login-box-msg{
+  text-align: center;
+}
+
+.signup-wrapper .register{
+  display: flex;
+  justify-content: center;
+}
+
+.two-factor .btn{
+  width: 13rem;
+  margin-top: 1rem;
+
+}

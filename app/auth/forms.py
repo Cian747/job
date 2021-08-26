@@ -16,8 +16,7 @@ class RegistrationForm(FlaskForm):
     def role_query():
         return Role.query
 
-    role = QuerySelectField(query_factory=role_query, get_label='name', validators=[
-                            validators.DataRequired()])
+    role = QuerySelectField(query_factory=role_query, get_label='name', validators=[validators.DataRequired()])
     first_name = StringField("First name", validators=[Required()])
     other_names = StringField("Other names", validators=[Required()])
     email = StringField('Your Email Address', validators=[Required(), Email()])

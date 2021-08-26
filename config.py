@@ -6,9 +6,13 @@ class Config:
     General configuration parent class
     '''
     SECRET_KEY = os.environ.get('SECRET_KEY')
-
+    JOB_API_URL =os.environ.get('JOB_API_URL')
     # Photos path
     UPLOADED_PHOTOS_DEST ='app/static/photos'
+
+    # Job api url
+    JOB_API_URL = os.environ.get("JOB_API_URL")
+    
     #  email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
@@ -22,7 +26,8 @@ class Config:
 
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://cian:ms254@localhost/watchlist_test'
+    SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI_TEST")
+
 
 
 class ProdConfig(Config):
@@ -45,7 +50,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://cian:ms254@localhost/jobapp"
+    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
 
     DEBUG = True
 

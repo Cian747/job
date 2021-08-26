@@ -1,14 +1,27 @@
 {% extends 'base.html' %}
 
+{% block title %}
+  {% set title = context['title'] %}
+  {{ title }}
+{% endblock title %}
+
 <!-- Styles block -->
-{% block styles%} {{ super() }}
-<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" />
-{% endblock %} {% block content %}
+
+{% block styles%} 
+  {{ super() }}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+{% endblock %} 
+
+{% set departments = context['departments'] %}
+
+{% block content %}
 <div class="container-fluid landing">
   <div class="row main">
     <div class="col-md-6 description">
       <div class="welcome-text">
-        <h3>Find the most exciting jobs</h3>
+        <h1>Find your ideal job with us</h1>
+        <h5>Over 1000 jobs available</h5>
+
       </div>
       <div class="search-form"></div>
     </div>
@@ -36,7 +49,7 @@
           </div>
           <div class="card-body">
             <p class="card-text">Information Technology</p>
-            <p class="card-text small">(29)</p>
+            <p class="card-text small">(0)</p>
           </div>
         </div>
         <div class="card m-3" style="width: 18rem">
@@ -65,8 +78,8 @@
             />
           </div>
           <div class="card-body">
-            <p class="card-text">Medical and Health</p>
-            <p class="card-text small">(15)</p>
+            <p class="card-text">Medical and Health</a></p>
+            <p class="card-text small">({{ departments.count('Medical') }})</p>
           </div>
         </div>
         <div class="card m-3" style="width: 18rem">
@@ -80,8 +93,8 @@
             />
           </div>
           <div class="card-body">
-            <p class="card-text">Software and Web</p>
-            <p class="card-text small">(12)</p>
+            <p class="card-text"><a href="{{ url_for('main.department',department = 'Data Scientist') }}">Software and Web</a></p>
+            <p class="card-text small">({{ departments.count('Data Scientist') }})</p>
           </div>
         </div>
         <div class="card m-3" style="width: 18rem">
@@ -95,8 +108,8 @@
             />
           </div>
           <div class="card-body">
-            <p class="card-text">Business and Marketing</p>
-            <p class="card-text small">(33)</p>
+            <p class="card-text"><a href="{{ url_for('main.department', department = 'Sales') }}">Business and Marketing</a></p>
+            <p class="card-text small">({{ departments.count("Sales") }})</p>
           </div>
         </div>
         <div class="card m-3" style="width: 18rem">
@@ -110,8 +123,8 @@
             />
           </div>
           <div class="card-body">
-            <p class="card-text">Engineering</p>
-            <p class="card-text small">(10)</p>
+            <p class="card-text"><a href="{{ url_for('main.department', department = 'Engineering') }}">Engineering</p></a>
+            <p class="card-text small">({{ departments.count('Engineering') }})</p>
           </div>
         </div>
         <div class="card m-3" style="width: 18rem">
@@ -125,8 +138,8 @@
             />
           </div>
           <div class="card-body">
-            <p class="card-text">Administration</p>
-            <p class="card-text small">(23)</p>
+            <p class="card-text"><a href="{{ url_for('main.department',department = 'Client Services') }}">Administration</a></p>
+            <p class="card-text small">({{ departments.count('Client Services') }})</p>
           </div>
         </div>
         <div class="card m-3" style="width: 18rem">
@@ -147,7 +160,7 @@
       </div>
     </div>
   </div>
-  <div class="row find-post-job">
+  <div class="row find-post-job mt-4">
     <div class="row">
       <div class="col-md-6 find-job">
         <div class="find-job-description">
@@ -155,7 +168,7 @@
           <p>Find your dream job</p>
         </div>
         <div class="find-job-btn">
-          <button class="btn-success">Browse jobs</button>
+          <a href="/jobs/"><button class="btn-success">Browse jobs</button></a>
         </div>
       </div>
       <div class="col-md-6 post-job">
