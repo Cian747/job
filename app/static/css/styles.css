@@ -1,3 +1,4 @@
+
 *,
 *::before,
 *::after {
@@ -23,6 +24,8 @@
   text-align: center;
   text-decoration: none;
 }
+.navbar-nav li a{
+
 
 .job-seeker-dash-wrapper{
   border: 2px solid red;
@@ -127,7 +130,10 @@ button {
   align-items: center;
   text-align: center;
   box-shadow:  10px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
+.card:hover{
+  filter:drop-shadow(8px 8px 10px rgb(19, 19, 19));
 }
 
 .landing .card:hover{
@@ -203,4 +209,3 @@ button {
 .user-details{
   /* display: none; */
 }
-

@@ -22,7 +22,6 @@ def login():
             return redirect(request.args.get('next') or url_for('main.user_dash'))
 
     flash('Invalid username or Password')
-
     data = {
 
         "title": "JobApp - Login",
@@ -67,6 +66,11 @@ def two_factor():
 
 @auth.route('/login/2fa', methods = ['POST', 'GET'])
 def two_factor_form():
+
+    data = {
+     'title':'Two Factor Authentication',
+    }
+    
     secret = request.form.get('secret')
     otp = request.form.get('otp')
     

@@ -14,7 +14,7 @@ class Jobs(db.Model):
     descriptionPlain = db.Column(db.String())
     text = db.Column(db.String())
     applyUrl = db.Column(db.String())
-    posted_by = db.Column(db.Integer, db.ForeignKey('users.id'))
+    posted_by = db.Column(db.Integer,db.ForeignKey('users.id'))
 
     def get_joblistings(user_id):
         listing = Jobs.query.filter_by(posted_by=user_id).order_by(Jobs.id.desc()).all()
