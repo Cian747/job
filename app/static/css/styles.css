@@ -1,9 +1,8 @@
-
-/* ----------
-Sidebar
-*/
-
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 /*-----------------
     Register
  -----------------------*/
@@ -23,37 +22,103 @@ Sidebar
   width: 100%;
   text-align: center;
   text-decoration: none;
+}
 
+.job-seeker-dash-wrapper{
+  border: 2px solid red;
 }
 
 /* NAVBAR */
-
-.navbar-nav li a{
+.navbar-nav li a {
   margin-right: 4rem;
-  font-family: 'Aclonica', sans-serif;
+  font-family: "Aclonica", sans-serif;
   color: rgb(19, 14, 39);
-  
-
 }
 
-
-
-.landing{
- height: 100%;
- text-align: center;
+.landing {
+  height: 100%;
+  text-align: center;
 }
 
-
-.main{
+.main {
   height: 40rem;
   background-color: rgba(198, 203, 224, 0.4);
 }
-.description{
+.description {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.find-post-job {
+  height: 20rem;
+  background-color: rgba(198, 203, 224, 0.4);
+  display: flex;
+  justify-content: center;
+}
+
+.find-job,
+.post-job {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  background-color: rgb(17, 11, 43);
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-us,
+.address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 2;
+}
+
+button {
+  height: 40px;
+  border: none;
+  width: 9rem;
+  border-radius: 5px;
+}
+
+/* NAVBAR */
+
+.navbar-nav li a {
+  margin-right: 4rem;
+  font-family: "Aclonica", sans-serif;
+  color: rgb(19, 14, 39);
+}
+
+.landing {
+  height: 100%;
+  text-align: center;
+}
+
+.main {
+  height: 40rem;
+  background-color: rgba(198, 203, 224, 0.4);
+}
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .landing .card{
   display: flex;
@@ -67,27 +132,29 @@ Sidebar
 
 .landing .card:hover{
   filter:drop-shadow(8px 8px 10px rgb(19, 19, 19));
-
+  box-shadow: 10px 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.card:hover {
+  filter: drop-shadow(8px 8px 10px rgb(19, 19, 19));
+}
 
-.find-post-job{
+.find-post-job {
   height: 20rem;
   background-color: rgba(198, 203, 224, 0.4);
   display: flex;
   justify-content: center;
 }
 
-
-.find-job, .post-job{
+.find-job,
+.post-job {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-
-.footer{
+.footer {
   background-color: rgb(17, 11, 43);
   color: white;
   display: flex;
@@ -95,8 +162,8 @@ Sidebar
   text-align: center;
 }
 
-
-.about-us, .address{
+.about-us,
+.address {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,13 +171,12 @@ Sidebar
   line-height: 2;
 }
 
-button{
+button {
   height: 40px;
   border: none;
   width: 9rem;
   border-radius: 5px;
 }
-
 
 .job-list .card{
   box-shadow:  10px 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -137,3 +203,4 @@ button{
 .user-details{
   /* display: none; */
 }
+

@@ -4,6 +4,11 @@
   {{ title }}
 {% endblock title %}
 
+{% block title %}
+  {% set title = context['title'] %}
+  {{ title }}
+{% endblock title %}
+
 <!-- Styles block -->
 {% block styles%} {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}" />

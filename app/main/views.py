@@ -2,10 +2,11 @@ from app.models.job import Jobs
 from flask import render_template,request,redirect,url_for,abort
 # from app.models.user import User
 # from app.models.subscribe import Subscribe
-from app import db,photos
+from app import db, photos
 from . import main
-from flask_login import login_required,current_user
-import markdown2 
+from flask_login import login_required, current_user
+import markdown2
+from .forms import NewJobForm
 
 
 @main.route('/')
@@ -15,25 +16,38 @@ def home():
     '''
     data = {
 
-     'title':'Jobo-Home',
-     'user':'current_user'  
+        'title': 'Jobo-Home',
+        'user': current_user
     }
- 
+
     return render_template('landing.html', context=data)
+
 
 @main.route('/user-dash')
 @login_required
 def user_dash():
+    form = NewJobForm()
+    job_listings = Jobs.get_joblistings(current_user.get_id())
+   
+    
+    if form.validate_on_submit():
+        new_job = Jobs(commitment=form.commitment.data, department=form.department.data, team=form.team.data,
+                       location=form.location.data, descriptionPlain=form.descriptionPlain.data, posted_by=current_user.get_id())
 
-    data = {
-        'title': 'userdash',
-        'user':current_user 
-
+        db.session.add(new_job)
+        db.session.commit()
         
-    }
+        return redirect(url_for('.user_dash'))
 
     jobs = Jobs.query.all()
     single_job = Jobs.query.filter_by(id=1).first()
+    
+    data = {
+        'title': 'user-dash',
+        'user': current_user,
+        'new_job_form': form,
+        'job_listings':job_listings
+    }
 
 
     return render_template('index.html',context=data, jobs=jobs, single_job=single_job)
