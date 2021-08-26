@@ -15,7 +15,7 @@
   >
     <h1 class="h2">Dashboard/job listing</h1>
   </div>
-  <!-- create ajob post -->
+  <!-- create a job post -->
   <div class="div">
       {%if job_listings|length < 0 %}
       <p>There are no jobs to display</p>
@@ -35,7 +35,7 @@
                 <tbody>
                     {%for joblisting in job_listings%}
                         <tr class="job-detail">
-                            <td>1</td>
+                            <td>{{ loop.index }}</td>
                             <td class="commitment">{{joblisting.commitment}}</td>
                             <td class="department">{{joblisting.department}}</td>
                             <td class="team">{{joblisting.team}}</td>

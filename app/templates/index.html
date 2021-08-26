@@ -28,11 +28,10 @@
         {% endblock%}
         {% else %}
           {% include 'employer/dashboard.html'%}
-          
+          {% include 'modals/add_job.html'%}
+          {% include 'modals/job_details.html'%}
       {% endif %}
     </div>
 
   </div> 
-{% include 'modals/add_job.html'%}
-{% include 'modals/job_details.html'%}
 {% endblock %}

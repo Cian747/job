@@ -7,18 +7,11 @@ from flask_migrate import Migrate, MigrateCommand
 
 # Creating app instance
 app = create_app('development')
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
-@app.before_first_request
-def create_tables():
-    # db.drop_all()
-    db.create_all()
 
 @app.before_first_request
 def create_tables():
     db.create_all()
+
 
 
 manager = Manager(app)
