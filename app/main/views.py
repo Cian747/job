@@ -6,8 +6,7 @@ from app import db,photos
 from . import main
 from flask_login import login_required,current_user
 import markdown2 
-from app.request import general_two
-from ..request import job_listings
+from app.request import general
 from .forms import NewJobForm,UpdateBio
 from sqlalchemy import func,desc,asc
 
@@ -177,7 +176,7 @@ def jobs(id):
 
     else:
         one_job = Jobs.query.filter_by(id = id).first()
-
+    # jobs=general()
     jobs = Jobs.query.all()
 
 

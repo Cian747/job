@@ -1,21 +1,25 @@
 
 {% macro JobsAvailable(jobs) %}
 
-{% for job in jobs %}
-<div class="card job" style="width: 35rem; margin: 1rem;">
-    <div class="card-body">
-      <h5 class="card-title">{{ job.text }}</h5>
-      <cite>{{ job.job_id }}</cite>
-      <h6 class="card-subtitle mb-2 text-muted">{{ job.commitment }}</h6>
-      <p class="card-text">{{ job.descriptionPlain | truncate(250) }}</p>
-      <p class="card-text">{{ job.location }}</p>
-      <p class="card-text">{{ job.department }}</p>
-      <p class="card-text">{{ job.team }}</p>
-      <a href="{{ job.applyUrl }}" class="card-link">Apply</a>
-      <a href="{{ url_for('main.jobs', id = job.id) }}" class="card-link"><button class="btn btn-success">View details</button></a>
+{% for job in jobs  %}
+{% if job.descriptionPlain or [] %}
+<div class="card job">
+    <div class="card-header" style="width: 100%;">
+        <h5 class="card-title">{{ job.text }}</h5>
+        <cite>{{ job.job_id }}</cite>
     </div>
-  </div>
+    <div class="card-body mb-3" style="width: 100%;">
+        <h6 class="card-subtitle mb-2 text-muted">{{ job.commitment }}</h6>
+        <p class="card-text">{{ job.descriptionPlain | truncate(250) }}</p>
+        <p class="card-text">{{ job.location }}</p>
+        <p class="card-text">{{ job.department }}</p>
+        <p class="card-text">{{ job.team }}</p>
+        <!-- <a href="{{ job.applyUrl }}" class="card-link">Apply</a> -->      
+        <a href="{{ url_for('main.jobs', id = job.id) }}" class="card-link"><button class="btn btn-success">View details</button></a>
+    </div>
+</div>
 
+{% endif %}
 {% endfor %}
 
 {% endmacro %}
