@@ -1,7 +1,7 @@
 from app.models.job import Jobs
 from flask import render_template,request,redirect,url_for,abort
-# from app.models.user import User
-# from app.models.subscribe import Subscribe
+from app.models.user import User
+from .forms import UpdateProfile, UpdateBio
 from app import db,photos
 from . import main
 from flask_login import login_required,current_user
@@ -56,10 +56,22 @@ def job_details(id):
     return render_template('index.html',single_job=single_job,jobs=jobs, context=data)
 
 
-@main.route('/user-profile')
+@main.route('/user-profile', methods=['GET', 'POST'])
 @login_required
 def user_profile():
 
+    # user = User.query.filter_by(username = uname).first()
+
+    # if user is None:
+    #     abort(404)
+    form = UpdateBio()
+    if form.validate_on_submit():
+        current_user.bio = form.bio.data
+        db.session.add(current_user)
+        db.session.commit()
+
+        return redirect (url_for ("main.user_profile"))
+        
     data = {
     'title': 'User profile',
     'user':current_user 
@@ -68,5 +80,34 @@ def user_profile():
     }
 
 
-    return render_template('userProfile.html', context=data)
+    return render_template('userProfile.html', context=data, form=form)
+
+
+
+@main.route('/user-profile/<uname>')
+@login_required
+def update_bio(uname):
+
+    user = User.query.filter_by(username = uname).first()
+
+    # if user is None:
+    #     abort(404)
+    form = UpdateBio()
+    if form.validate_on_submit():
+        current_user.bio = form.bio.data
+        db.session.add(current_user)
+        db.session.commit()
+
+        return redirect (url_for ("main.user_profile"))
+
+        
+    data = {
+    'title': 'User profile',
+    'user':current_user 
+
+        
+    }
+
+
+    return render_template('userProfile.html', context=data, form=form)
 

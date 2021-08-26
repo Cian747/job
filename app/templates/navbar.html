@@ -14,7 +14,7 @@
         </li>
         {% if current_user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link userProfile" href="">{{ current_user.username }}</a>
+          <a class="nav-link userProfile" href="{{ url_for('main.user_profile' ) }}">{{ current_user.username }}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('main.user_dash') }}">Dashboard</a>
