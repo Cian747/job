@@ -20,6 +20,7 @@ class User(UserMixin,db.Model):
     password_hash = db.Column(db.String(255))
     my_job_post = db.relationship('Jobs', backref='job',lazy='dynamic')
 
+
     @property
     def password(self):
         raise AttributeError('You cannot read the password attribute')

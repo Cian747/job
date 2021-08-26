@@ -8,13 +8,13 @@
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
-
+<script src="{{ url_for('static',filename='js/script.js') }}"></script>
 {% endblock %}
 
-{% import 'bootstrap/wtf.html' as wtf %}
 {% block content %}
 
 <div class="container-fluid">
+
     <div class="row min-vh-100 flex-column flex-md-row">
       <!-- sidebar block -->
       {% block sidebar%}
@@ -22,17 +22,12 @@
       {% endblock%}
 
       {% if current_user.roles_id == 1 %}
-        <!-- joblisting block -->
-        {% block joblisting %}
-          {%include 'job-listing.html'%}
-        {% endblock%}
-        {% else %}
-          {% include 'employer/dashboard.html'%}
-          
+        <div class="col-md-10 user-details">
+            <h1>here i am</h1>
+        </div>
       {% endif %}
     </div>
 
   </div> 
-{% include 'modals/add_job.html'%}
-{% include 'modals/job_details.html'%}
+
 {% endblock %}

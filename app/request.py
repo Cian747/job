@@ -1,3 +1,4 @@
+
 import urllib.request,json
 from .models.job import Jobs
 from flask_login import current_user
@@ -25,6 +26,16 @@ def general():
         if get_job_response:
             for job in get_job_response:
                 job_id  = job.get('id')
+
+def job_listings():
+    
+    with urllib.request.urlopen(job_url) as url:
+        jobsRAW = url.read()
+        jobsJSON = json.loads(jobsRAW)
+
+        if jobsJSON:
+            for job in jobsJSON:
+                job_id = job.get("job_id")
                 commitment = job.get('categories').get('commitment')
                 department = job.get('categories').get('department')
                 team = job.get('categories').get('team')
@@ -58,21 +69,19 @@ def general_two():
         if get_job_response:
             for job in get_job_response:
                 job_id  = job.get('id')
-                commitment = job.get('categories').get('commitment')
-                department = job.get('categories').get('department')
-                team = job.get('categories').get('team')
-                location = job.get('categories').get('location')
-                description =job.get('description')
+                descriptionPlain = job.get("descriptionPlain")
                 text = job.get("text")
-                applyUrl =job.get('applyUrl')
+                applyUrl = job.get("applyUrl")
 
-                if location is None or commitment is None:
-                    location = 'Remote'
-                    commitment = 'Full time'
+                job_posting = Jobs(job_id = job_id, commitment = commitment, department = department, 
+                                    team = team, location = location, descriptionPlain = descriptionPlain,
+                                    text = text, applyUrl = applyUrl)
 
-                job = Jobs(job_id = job_id,commitment=commitment,department = department,team=team,location=location,descriptionPlain=description,text=text,applyUrl=applyUrl)
+                db.session.add(job_posting)
+                db.session.commit()
 
-                # db.session.add(job)
-                # db.session.commit()
+    return job_posting    
 
-        return job
+
+
+
