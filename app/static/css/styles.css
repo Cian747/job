@@ -184,6 +184,54 @@ button {
   border-radius: 5px;
 }
 
+/* ----------
+ General Settings
+*/
+.job{
+  /* border:1px solid grey; */
+  box-shadow:  0 4px 8px 0 rgba(51, 51, 51, 0.2);
+  margin-bottom: 1rem;
+  color: black;
+  border-radius: 8px;
+  height: auto;
+  text-align: left !important; 
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+
+.card:hover{
+    filter:drop-shadow(8px 8px 10px rgb(134, 134, 134));
+    cursor: pointer;
+}
+
+.card-title{
+
+  font-family: 'Acme', sans-serif;
+  font-size: 30px;
+}
+
+.category{
+
+  background-color: #E5DCC5;
+
+}
+.cat-det{
+
+  background-color: white;
+  border-radius: 20px;
+  box-shadow:  4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+  padding: auto;
+
+}
+
+.welcome{
+
+  padding: 2rem;
+  background-color:#E5DCC5;
+  box-shadow:  4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+
+}
+
 .job-list .card{
   box-shadow:  10px 4px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: rgba(227, 231, 245, 0.4);
