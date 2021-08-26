@@ -45,31 +45,31 @@ def general():
 
         return job
 
-def general_two():
-    '''
-    fetch all the general jobs
-    '''
-    get_job_url = job_api_url
+# def general_two():
+#     '''
+#     fetch all the general jobs
+#     '''
+#     get_job_url = job_api_url
 
-    with urllib.request.urlopen(get_job_url) as url:
-        get_job_data = url.read()
-        get_job_response = json.loads(get_job_data)
+#     with urllib.request.urlopen(get_job_url) as url:
+#         get_job_data = url.read()
+#         get_job_response = json.loads(get_job_data)
 
-        if get_job_response:
-            for job in get_job_response:
-                job_id  = job.get('id')
-                descriptionPlain = job.get("descriptionPlain")
-                text = job.get("text")
-                applyUrl = job.get("applyUrl")
+#         if get_job_response:
+#             for job in get_job_response:
+#                 job_id  = job.get('id')
+#                 descriptionPlain = job.get("descriptionPlain")
+#                 text = job.get("text")
+#                 applyUrl = job.get("applyUrl")
 
-                job_posting = Jobs(job_id = job_id, commitment = commitment, department = department, 
-                                    team = team, location = location, descriptionPlain = descriptionPlain,
-                                    text = text, applyUrl = applyUrl)
+#                 job_posting = Jobs(job_id = job_id, commitment = commitment, department = department, 
+#                                     team = team, location = location, descriptionPlain = descriptionPlain,
+#                                     text = text, applyUrl = applyUrl)
 
-                db.session.add(job_posting)
-                db.session.commit()
+#                 db.session.add(job_posting)
+#                 db.session.commit()
 
-    return job_posting    
+#     return job_posting    
 
 
 
